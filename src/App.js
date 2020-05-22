@@ -1,19 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Button, ThemeProvider, Header } from 'react-native-elements';
 
-export default function App() {
+export default function DentariaApp() {
   return (
-    <View style={styles.container}>
-      <Text><b>araCreate</b> - MAKE YOUR DREAMS MADE</Text>
-    </View>
+    <ThemeProvider>
+      <Header
+        leftComponent={{ icon: 'menu', color: '#fff' }}
+        centerComponent={{ text: 'DENTARIA', style: { color: '#fff' } }}
+        rightComponent={{ icon: 'home', color: '#fff' }}
+      />
+      <Button
+        title="PATIENT"
+        type="outline"
+      />
+      <Button
+        title="DENTIST"
+        type="outline"
+      />
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
