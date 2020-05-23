@@ -1,32 +1,32 @@
 const DataPatientRequests = [
   {
     request: "Video Call",
-    patient: "Patient X",
+    patient: "Scott Murphy",
     avatar_url: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     request: "Image Analysis",
-    patient: "Patient Y",
+    patient: "Katerina Farley",
     avatar_url: "https://randomuser.me/api/portraits/women/1.jpg",
   },
   {
     request: "Appointment",
-    patient: "Patient Z",
+    patient: "Nala Joyner",
     avatar_url: "https://randomuser.me/api/portraits/women/2.jpg",
   },
   {
     request: "Appointment",
-    patient: "Patient A",
+    patient: "Enrique Mora",
     avatar_url: "https://randomuser.me/api/portraits/men/2.jpg",
   },
   {
     request: "Appointment",
-    patient: "Patient B",
+    patient: "Theodore Hart",
     avatar_url: "https://randomuser.me/api/portraits/men/20.jpg",
   },
   {
     request: "Image Analysis",
-    patient: "Patient C",
+    patient: "Beverly Bevan",
     avatar_url: "https://randomuser.me/api/portraits/women/25.jpg",
   },
 ];

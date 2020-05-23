@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { ListItem } from "react-native-elements";
-import DataPatientRequests from '../assets/data'
+import DataPatientRequests from "../assets/data";
 
 function DentistScreen({ navigation }) {
   return (
@@ -13,7 +13,11 @@ function DentistScreen({ navigation }) {
             leftAvatar={{ source: { uri: l.avatar_url } }}
             title={l.request}
             subtitle={l.patient}
-            onPress={() => navigation.navigate("PatientScreen")}
+            onPress={() =>
+              navigation.navigate("DentistVideoCallScreen", {
+                patient: l,
+              })
+            }
             bottomDivider
           />
         ))}
