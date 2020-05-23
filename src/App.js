@@ -3,14 +3,15 @@
 // Description  : Smart Dental Health Management System
 
 import React from "react";
-import { View, ActivityIndicator} from "react-native";
-import { Button, ThemeProvider, Header, ListItem, Image} from "react-native-elements";
+import { View } from "react-native";
+import { Button, ThemeProvider, Header } from "react-native-elements";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import AppStyles from "./assets/styles";
-import DataPatientRequests from "./assets/data";
+import PatientDentalHealthScreen from "./screens/patient_dental_health_screen";
+import DentistScreen from "./screens/dentist_screen";
 
 const Stack = createStackNavigator();
 
@@ -68,13 +69,13 @@ function LandingPageScreen({ navigation }) {
         <Button
           style={AppStyles.button}
           title="PATIENT"
-          type="outline"
+          type="solid"
           onPress={() => navigation.navigate("PatientScreen")}
         />
         <Button
           style={AppStyles.button}
           title="DENTIST"
-          type="outline"
+          type="solid"
           onPress={() => navigation.navigate("DentistScreen")}
         />
       </View>
@@ -89,51 +90,18 @@ function PatientScreen({ navigation }) {
         <Button
           style={AppStyles.button}
           title="SHOW DENTAL HEALTH"
-          type="outline"
+          type="solid"
           onPress={() => navigation.navigate("PatientDentalHealthScreen")}
         />
         <Button
           style={AppStyles.button}
           title="VIDEO CALL DENTIST"
-          type="outline"
+          type="solid"
         />
         <Button
           style={AppStyles.button}
           title="BOOK APPOINTMENT"
-          type="outline"
-        />
-      </View>
-    </>
-  );
-}
-
-function DentistScreen({ navigation }) {
-  return (
-    <>
-      <View>
-        {DataPatientRequests.map((l, i) => (
-          <ListItem
-            key={i}
-            leftAvatar={{ source: { uri: l.avatar_url } }}
-            title={l.request}
-            subtitle={l.patient}
-            onPress={() => navigation.navigate("PatientScreen")}
-            bottomDivider
-          />
-        ))}
-      </View>
-    </>
-  );
-}
-
-function PatientDentalHealthScreen({ navigation }) {
-  return (
-    <>
-      <View style={AppStyles.image_container}>
-        <Image
-          source={{ uri: "https://southairdriesmiles.ca/wp-content/uploads/2019/08/open-mouth-vector-768x768.png"}}
-          style={{ width: 350, height: 350 }}
-          PlaceholderContent={<ActivityIndicator />}
+          type="solid"
         />
       </View>
     </>
