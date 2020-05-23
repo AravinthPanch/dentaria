@@ -3,15 +3,15 @@
 // Description  : Smart Dental Health Management System
 
 import React from "react";
-import { View } from "react-native";
-import { Button, ThemeProvider, Header } from "react-native-elements";
+import { ThemeProvider, Header } from "react-native-elements";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import AppStyles from "./assets/styles";
 import PatientDentalHealthScreen from "./screens/patient_dental_health_screen";
 import DentistScreen from "./screens/dentist_screen";
+import PatientScreen from "./screens/patient_screen";
+import HomeScreen from "./screens/home_screen";
 
 const Stack = createStackNavigator();
 
@@ -37,9 +37,9 @@ export default function DentariaApp() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="LandingPageScreen"
+            name="HomeScreen"
             options={{ title: "Welcome" }}
-            component={LandingPageScreen}
+            component={HomeScreen}
           />
           <Stack.Screen
             name="PatientScreen"
@@ -59,51 +59,5 @@ export default function DentariaApp() {
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
-  );
-}
-
-function LandingPageScreen({ navigation }) {
-  return (
-    <>
-      <View style={AppStyles.container}>
-        <Button
-          style={AppStyles.button}
-          title="PATIENT"
-          type="solid"
-          onPress={() => navigation.navigate("PatientScreen")}
-        />
-        <Button
-          style={AppStyles.button}
-          title="DENTIST"
-          type="solid"
-          onPress={() => navigation.navigate("DentistScreen")}
-        />
-      </View>
-    </>
-  );
-}
-
-function PatientScreen({ navigation }) {
-  return (
-    <>
-      <View style={AppStyles.container}>
-        <Button
-          style={AppStyles.button}
-          title="SHOW DENTAL HEALTH"
-          type="solid"
-          onPress={() => navigation.navigate("PatientDentalHealthScreen")}
-        />
-        <Button
-          style={AppStyles.button}
-          title="VIDEO CALL DENTIST"
-          type="solid"
-        />
-        <Button
-          style={AppStyles.button}
-          title="BOOK APPOINTMENT"
-          type="solid"
-        />
-      </View>
-    </>
   );
 }
