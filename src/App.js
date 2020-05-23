@@ -13,6 +13,7 @@ import DentistScreen from "./screens/dentist_screen";
 import PatientScreen from "./screens/patient_screen";
 import HomeScreen from "./screens/home_screen";
 import DentistVideoCallScreen from "./screens/dentist_video_call_screen";
+import PatientAppointmentScreen from "./screens/patient_appointment_screen";
 
 const Stack = createStackNavigator();
 
@@ -61,6 +62,11 @@ export default function DentariaApp() {
             name="DentistVideoCallScreen"
             options={{ title: "[Dentist] Video Call" }}
             component={DentistVideoCallScreen}
+          />
+          <Stack.Screen
+            name="PatientAppointmentScreen"
+            options={{ title: "[Patient] Appointment" }}
+            component={PatientAppointmentScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

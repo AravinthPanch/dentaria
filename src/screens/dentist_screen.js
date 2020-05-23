@@ -21,7 +21,7 @@ function DentistScreen({ navigation }) {
                 paddingTop: 5,
               }}
             >
-              <Rating imageSize={10} startingValue={4.5} readonly />
+              <Rating imageSize={10} startingValue={DentistsData[0].rating} readonly />
             </View>
           }
           bottomDivider

@@ -45,8 +45,9 @@ const PatientsData = [
 
 const DentistsData = [
   {
-    dentist: "Dr. Strange",
+    dentist: "Dr. Alyssa Lambert",
     avatar_url: "https://randomuser.me/api/portraits/men/1.jpg",
+    rating: 4.5,
   },
 ];
 
