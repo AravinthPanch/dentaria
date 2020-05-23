@@ -1,7 +1,6 @@
 import React from "react";
 import { View, ActivityIndicator } from "react-native";
 import { Button, Image, ListItem } from "react-native-elements";
-import DataPatientRequests from "../assets/data";
 
 function DentistVideoCallScreen({ route, navigation }) {
   const patient = route.params.patient;
@@ -10,17 +9,17 @@ function DentistVideoCallScreen({ route, navigation }) {
       <View style={{ flex: 1, marginVertical: 5 }}>
         <ListItem
           title="Patient Name"
-          subtitle={ patient.patient }
+          subtitle={patient.patient}
           bottomDivider
         ></ListItem>
         <ListItem
           title="Dental Health"
-          subtitle="12/10"
+          subtitle={patient.dental_health}
           bottomDivider
         ></ListItem>
         <ListItem
           title="Last Treatment"
-          subtitle="Full Mouth Flossing"
+          subtitle={patient.last_treatment}
           bottomDivider
         ></ListItem>
       </View>
