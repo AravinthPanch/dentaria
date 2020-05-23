@@ -22,7 +22,8 @@ function PatientScreen({ navigation }) {
           title="VIDEO CALL DENTIST"
           type="solid"
           onPress={() =>
-            navigation.navigate("DentistVideoCallScreen", {
+            navigation.navigate("PatientVideoCallScreen", {
+              dentist: DentistsData[0],
               patient: PatientsData[0],
             })
           }

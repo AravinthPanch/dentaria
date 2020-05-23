@@ -15,7 +15,9 @@ function PatientAppointmentScreen({ route, navigation }) {
         <Modal animationType="slide" transparent={true} visible={modalVisible}>
           <View style={AppStyles.modal_container_view}>
             <View style={AppStyles.modal_view}>
-              <Text style={{ margin: 20 }}>Your appointment is booked !!!</Text>
+              <Text style={{ padding: 20, fontSize: 18 }}>
+                Your appointment is booked !!!
+              </Text>
 
               <Button
                 title="Okay"

@@ -3,7 +3,8 @@ import { Text, View, ActivityIndicator, Modal } from "react-native";
 import { Button, Image, ListItem } from "react-native-elements";
 import AppStyles from "../assets/styles";
 
-function DentistVideoCallScreen({ route, navigation }) {
+function dentistVideoCallScreen({ route, navigation }) {
+  const dentist = route.params.dentist;
   const patient = route.params.patient;
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -14,14 +15,14 @@ function DentistVideoCallScreen({ route, navigation }) {
           <View style={AppStyles.modal_container_view}>
             <View style={AppStyles.modal_view}>
               <Text style={{ padding: 30, fontSize: 18 }}>
-                Calling {patient.patient} ...
+                Calling {dentist.dentist} ...
               </Text>
 
               <Button
                 title="Okay"
                 onPress={() => {
                   setModalVisible(!modalVisible);
-                  navigation.navigate("DentistScreen");
+                  navigation.navigate("PatientScreen");
                 }}
               ></Button>
             </View>
@@ -31,13 +32,13 @@ function DentistVideoCallScreen({ route, navigation }) {
 
       <View style={{ flex: 1, marginVertical: 5 }}>
         <ListItem
-          title="Patient Name"
-          subtitle={patient.patient}
+          title="Dentist Name"
+          subtitle={dentist.dentist}
           bottomDivider
         ></ListItem>
         <ListItem
-          title="Dental Health"
-          subtitle={patient.dental_health}
+          title="Dentist Rating"
+          subtitle={dentist.rating.toString()}
           bottomDivider
         ></ListItem>
         <ListItem
@@ -49,7 +50,7 @@ function DentistVideoCallScreen({ route, navigation }) {
 
       <View style={{ flex: 1, alignItems: "center" }}>
         <Image
-          source={{ uri: patient.avatar_url }}
+          source={{ uri: dentist.avatar_url }}
           style={{ width: 200, height: 200 }}
           PlaceholderContent={<ActivityIndicator />}
         ></Image>
@@ -68,4 +69,4 @@ function DentistVideoCallScreen({ route, navigation }) {
   );
 }
 
-export default DentistVideoCallScreen;
+export default dentistVideoCallScreen;

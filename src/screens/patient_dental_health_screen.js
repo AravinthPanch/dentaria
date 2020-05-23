@@ -14,7 +14,7 @@ function PatientDentalHealthScreen({ route, navigation }) {
         <Modal animationType="slide" transparent={true} visible={modalVisible}>
           <View style={AppStyles.modal_container_view}>
             <View style={AppStyles.modal_view}>
-              <Text style={{ margin: 50 }}>
+              <Text style={{ padding: 20, fontSize: 18 }}>
                 Your dental score is {patient.dental_health}
               </Text>
 
