@@ -1,11 +1,32 @@
-import React from "react";
-import { View, ActivityIndicator } from "react-native";
+import React, { useState } from "react";
+import { Text, View, ActivityIndicator, Modal } from "react-native";
 import { Button, Image, ListItem } from "react-native-elements";
+import AppStyles from "../assets/styles";
 
 function DentistVideoCallScreen({ route, navigation }) {
   const patient = route.params.patient;
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <>
+      <View>
+        <Modal animationType="slide" transparent={true} visible={modalVisible}>
+          <View style={AppStyles.modal_container_view}>
+            <View style={AppStyles.modal_view}>
+              <Text style={{ margin: 50 }}>Calling</Text>
+
+              <Button
+                title="Okay"
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                  navigation.navigate("DentistScreen");
+                }}
+              ></Button>
+            </View>
+          </View>
+        </Modal>
+      </View>
+
       <View style={{ flex: 1, marginVertical: 5 }}>
         <ListItem
           title="Patient Name"
@@ -23,6 +44,7 @@ function DentistVideoCallScreen({ route, navigation }) {
           bottomDivider
         ></ListItem>
       </View>
+
       <View style={{ flex: 1, alignItems: "center" }}>
         <Image
           source={{ uri: patient.avatar_url }}
@@ -30,10 +52,14 @@ function DentistVideoCallScreen({ route, navigation }) {
           PlaceholderContent={<ActivityIndicator />}
         ></Image>
       </View>
+
       <Button
         title="Call"
         style={{
           justifyContent: "center",
+        }}
+        onPress={() => {
+          setModalVisible(true);
         }}
       ></Button>
     </>

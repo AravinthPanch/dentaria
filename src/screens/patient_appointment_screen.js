@@ -1,5 +1,5 @@
-import React, { Component, useState } from "react";
-import { Alert, Text, View, Modal, TouchableHighlight } from "react-native";
+import React, { useState } from "react";
+import { Text, View, Modal } from "react-native";
 import { Button, ListItem } from "react-native-elements";
 import DatePicker from "react-native-modern-datepicker";
 import AppStyles from "../assets/styles";
