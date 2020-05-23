@@ -12,7 +12,10 @@ function PatientScreen({ navigation }) {
           style={AppStyles.button}
           title="SHOW DENTAL HEALTH"
           type="solid"
-          onPress={() => navigation.navigate("PatientDentalHealthScreen")}
+          onPress={() => navigation.navigate("PatientDentalHealthScreen", {
+            patient: PatientsData[0],
+          })
+        }
         />
         <Button
           style={AppStyles.button}

@@ -1,17 +1,43 @@
-import React from "react";
-import { View, ActivityIndicator} from "react-native";
-import { Image} from "react-native-elements";
+import React, { useState } from "react";
+import { Text, Modal, View, TouchableOpacity } from "react-native";
+import { Button, Image } from "react-native-elements";
 import AppStyles from "../assets/styles";
+import MouthImage from "../assets/mouth.png";
 
-function PatientDentalHealthScreen({ navigation }) {
+function PatientDentalHealthScreen({ route, navigation }) {
+  const patient = route.params.patient;
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <>
-      <View style={AppStyles.image_container}>
-        <Image
-          source={{ uri: "https://southairdriesmiles.ca/wp-content/uploads/2019/08/open-mouth-vector-768x768.png"}}
-          style={{ width: 350, height: 350 }}
-          PlaceholderContent={<ActivityIndicator />}
-        />
+      <View>
+        <Modal animationType="slide" transparent={true} visible={modalVisible}>
+          <View style={AppStyles.modal_container_view}>
+            <View style={AppStyles.modal_view}>
+              <Text style={{ margin: 50 }}>
+                Your dental score is {patient.dental_health}
+              </Text>
+
+              <Button
+                title="Okay"
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                }}
+              ></Button>
+            </View>
+          </View>
+        </Modal>
+      </View>
+
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        >
+          <Image source={MouthImage} style={{ width: 260, height: 400 }} />
+        </TouchableOpacity>
       </View>
     </>
   );
